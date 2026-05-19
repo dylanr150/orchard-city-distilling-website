@@ -1,0 +1,265 @@
+/* ===========================================
+   ourgoal.css
+   Styles specific to the Our Goal page.
+   Requires global.css to be loaded first.
+=========================================== */
+
+/* ─────────────────────────────────────────
+   SHARED UTILITIES
+───────────────────────────────────────── */
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.section-title.light { color: var(--white); }
+.section-title.dark  { color: var(--dark); }
+
+.gold-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: clamp(11px, 1.5vw, 14px) clamp(20px, 3vw, 30px);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(11px, 1.3vw, 13px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.btn-gold { background: var(--gold); color: var(--white); }
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 146, 42, 0.35);
+}
+
+.btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--dark); }
+
+/* ─────────────────────────────────────────
+   REVEAL ANIMATION
+───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.12s; }
+
+/* ─────────────────────────────────────────
+   NAV ACTIVE STATE
+───────────────────────────────────────── */
+.nav-links a.current { color: var(--gold); }
+
+/* ─────────────────────────────────────────
+   PAGE HERO
+───────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  height: clamp(220px, 30vw, 380px);
+  margin-top: var(--nav-h);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark2);
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.72) 100%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 clamp(16px, 4vw, 48px);
+}
+
+.page-hero-tag {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.page-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.05;
+}
+
+/* ─────────────────────────────────────────
+   MAIN CONTENT — image + text side by side
+───────────────────────────────────────── */
+.goal-content {
+  background: var(--dark);
+  padding: clamp(60px, 8vw, 110px) clamp(16px, 4vw, 48px);
+}
+
+.goal-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+
+/* Image with gold accent corner */
+.goal-img-wrap {
+  position: relative;
+  /* Sticky so image stays in view as user reads the paragraphs */
+  position: sticky;
+  top: calc(var(--nav-h) + 32px);
+}
+
+.goal-img-wrap img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.goal-img-accent {
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  width: 60%;
+  height: 60%;
+  border: 2px solid var(--gold);
+  z-index: 0;
+}
+
+/* Text column */
+.goal-text { color: var(--white); }
+
+.goal-body {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: 24px;
+}
+
+.goal-body:last-child { margin-bottom: 0; }
+
+/* ─────────────────────────────────────────
+   CTA SECTION
+───────────────────────────────────────── */
+.goal-cta {
+  background: var(--dark2);
+  border-top: 1px solid rgba(200, 146, 42, 0.15);
+  padding: clamp(60px, 8vw, 100px) clamp(16px, 4vw, 48px);
+  position: relative;
+  overflow: hidden;
+}
+
+.goal-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 146, 42, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.goal-cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-body {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 8px 0 36px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .goal-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* Image unsticks and caps width on mobile */
+  .goal-img-wrap {
+    position: relative;
+    top: auto;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .goal-img-accent { display: none; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 380px) {
+  .page-hero-title { font-size: 30px; }
+}
