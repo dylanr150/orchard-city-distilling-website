@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orchard City Distilling</title>
+  <title>Contact Us — Orchard City Distilling</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/general.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="#" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="assets/images/logo.png" alt="Orchard City Distilling" class="nav-logo-icon"/>
   </a>
-
   <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="aboutus.html">About Us</a></li>
     <li><a href="ourgoal.html">Our Goal</a></li>
     <li><a href="clients.html">Clients</a></li>
     <li><a class="current" href="contact.html">Contact Us</a></li>
   </ul>
-
   <div class="nav-icons">
     <a href="https://www.facebook.com/orchard.city.distilling11/" class="nav-social">
       <img src="assets/images/facebook.png" alt="Facebook"/>
@@ -46,42 +45,181 @@
   <a class="current" href="contact.html">Contact Us</a>
 </div>
 
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <!-- Replace src with a distillery/bottles/hands image -->
+    <img src="assets/images/contactus.png" alt="Contact Orchard City Distilling"/>
+  </div>
+  <div class="page-hero-content reveal">
+    <span class="page-hero-tag">Orchard City Distilling</span>
+    <h1 class="page-hero-title">Contact Us</h1>
+    <p class="page-hero-sub">Let's connect. At Orchard Distilling, we value the relationship with those who appreciate the honest craft in every bottle. Whether you have a question about our orchard-to-glass process, want to find where to purchase our spirits, or simply wish to share your experience, we're here to listen. Reach out and let's start a conversation rooted in a shared appreciation for authentic flavor and the spirit of the orchard. We look forward to hearing from you.</p>
+  </div>
+</section>
 
+<!-- ── CONTACT INFO STRIP ── -->
+<section class="contact-strip">
+  <div class="contact-strip-inner">
 
+    <div class="contact-item reveal">
+      <div class="contact-icon">
+        <img src="assets/images/phone.png" alt="Call Us"/>
+      </div>
+      <h3 class="contact-label">Call Us</h3>
+      <a href="tel:2507177080" class="contact-value contact-link">250-717-7080</a>
+    </div>
 
+    <div class="contact-divider"></div>
+
+    <div class="contact-item reveal reveal-delay-1">
+      <div class="contact-icon">
+        <img src="assets/images/mail.png" alt="Email"/>
+      </div>
+      <h3 class="contact-label">Email</h3>
+      <a href="mailto:info@orchardcitydistilling.com" class="contact-value contact-link">info@orchardcitydistilling.com</a>
+    </div>
+
+    <div class="contact-divider"></div>
+
+    <div class="contact-item reveal reveal-delay-2">
+      <div class="contact-icon">
+        <img src="assets/images/clock.png" alt="Hours"/>
+      </div>
+      <h3 class="contact-label">Hours</h3>
+      <p class="contact-value">Monday – Friday<br/>9 AM – 5 PM PST</p>
+    </div>
+
+    <div class="contact-divider"></div>
+
+    <div class="contact-item reveal reveal-delay-3">
+      <div class="contact-icon">
+        <img src="assets/images/question.png" alt="Question"/>
+      </div>
+      <h3 class="contact-label">Have Any Question?</h3>
+      <p class="contact-value">Feel free to reach out!</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTACT FORM ── -->
+<section class="form-section">
+  <div class="form-inner">
+
+    <div class="form-header reveal">
+      <span class="section-tag">Send Us a Message</span>
+      <h2 class="section-title dark">Get In Touch</h2>
+      <div class="gold-rule"></div>
+    </div>
+
+    <div class="form-layout">
+
+      <!-- Form -->
+      <div class="form-wrap reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name"/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" autocomplete="tel"/>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?"/>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us how we can help..." rows="6"></textarea>
+        </div>
+        <div class="form-footer">
+          <button type="submit" class="btn btn-gold">Send Message</button>
+          <p class="form-note">We typically respond within 24–48 hours.</p>
+        </div>
+      </div>
+
+      <!-- Side info -->
+      <div class="form-aside reveal reveal-delay-1">
+        <div class="aside-block">
+          <h4 class="aside-title">Looking to Partner?</h4>
+          <p class="aside-body">If you're interested in working with Orchard City Distilling to bring your brand to market, we'd love to hear from you. Fill out the form and we'll be in touch to discuss next steps.</p>
+        </div>
+        <div class="aside-block">
+          <h4 class="aside-title">Follow Along</h4>
+          <p class="aside-body">Stay up to date with our latest products, partnerships and events on social media.</p>
+          <div class="aside-socials">
+            <a href="https://www.facebook.com/orchard.city.distilling11/" class="aside-social-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/orchardcity.distilling/" class="aside-social-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo-wrap">
-      <img src="assets/images/footerlogo.png" alt="Orchard City Distilling" class="footer-logo"/>
-    </div>
-    <div class="footer-tagline">Craft Spirits — Kelowna, British Columbia</div>
-    <div class="footer-grid">
+
+    <div class="footer-top">
+
+      <!-- Logo -->
+      <div class="footer-brand">
+        <img src="assets/images/footerlogo.png" alt="Orchard City Distilling" class="footer-logo"/>
+      </div>
+
+      <!-- About Us -->
       <div class="footer-col">
         <h4>About Us</h4>
         <p>A fully licensed and bonded craft distillery operating in the heart of British Columbia's Okanagan Valley, producing exceptional craft spirits with locally sourced ingredients.</p>
       </div>
-      <div class="footer-col">
-        <h4>Products</h4>
-        <a href="#">Gin</a>
-        <a href="#">Vodka</a>
-        <a href="#">Whisky</a>
-        <a href="#">Liqueurs</a>
-        <a href="#">Cocktails</a>
-      </div>
+
+      <!-- Company -->
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="#">About</a>
-        <a href="#">Our Story</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Products</a>
+        <a href="aboutus.html">About</a>
+        <a href="ourgoal.html">Our Goal</a>
+        <a href="clients.html">Clients</a>
+        <a href="contact.html">Contact</a>
       </div>
+
+      <!-- Connect -->
       <div class="footer-col">
-        <h4>Visit Us</h4>
-        <p>Kelowna, BC<br>British Columbia<br>Canada</p>
+        <h4>Connect</h4>
+        <div class="footer-contact-item">
+          <!-- Replace src with your email icon -->
+          <img src="assets/images/mail.png" alt="Email" class="footer-contact-icon"/>
+          <a href="mailto:info@orchardcitydistilling.com">info@orchardcitydistilling.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <!-- Replace src with your phone icon -->
+          <img src="assets/images/phone.png" alt="Phone" class="footer-contact-icon"/>
+          <a href="tel:2507177080">250-717-7080</a>
+        </div>
+        <div class="footer-contact-item">
+          <!-- Replace src with your location icon -->
+          <img src="assets/images/location.png" alt="Location" class="footer-contact-icon"/>
+          <span>Kelowna, BC, Canada</span>
+        </div>
       </div>
+
     </div>
+
     <div class="footer-bottom">
       <p>&copy; 2026 Orchard City Distilling. All rights reserved.</p>
       <div class="footer-bottom-links">
@@ -89,8 +227,10 @@
         <a href="#">Terms of Use</a>
       </div>
     </div>
+
   </div>
 </footer>
+
 <script src="assets/js/general.js"></script>
 </body>
 </html>

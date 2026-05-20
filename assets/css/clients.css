@@ -1,0 +1,383 @@
+/* ===========================================
+   clients.css
+   Styles specific to the Clients page.
+   Requires global.css to be loaded first.
+=========================================== */
+
+/* ─────────────────────────────────────────
+   SHARED UTILITIES
+───────────────────────────────────────── */
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.section-title.light { color: var(--white); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: clamp(11px, 1.5vw, 14px) clamp(20px, 3vw, 30px);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(11px, 1.3vw, 13px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.btn-gold { background: var(--gold); color: var(--white); }
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 146, 42, 0.35);
+}
+
+.btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--dark); }
+
+/* ─────────────────────────────────────────
+   REVEAL ANIMATION
+───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible     { opacity: 1; transform: none; }
+.reveal-delay-1     { transition-delay: 0.1s; }
+.reveal-delay-2     { transition-delay: 0.2s; }
+.reveal-delay-3     { transition-delay: 0.3s; }
+
+/* ─────────────────────────────────────────
+   NAV ACTIVE STATE
+───────────────────────────────────────── */
+.nav-links a.current { color: var(--gold); }
+
+/* ─────────────────────────────────────────
+   PAGE HERO
+───────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  height: clamp(220px, 30vw, 380px);
+  margin-top: var(--nav-h);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark2);
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 clamp(16px, 4vw, 48px);
+}
+
+.page-hero-tag {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.page-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.05;
+}
+
+/* ─────────────────────────────────────────
+   SECTION HEADERS
+───────────────────────────────────────── */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.section-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(13px, 1.8vw, 16px);
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--white);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+}
+
+/* Gold underline centered beneath heading */
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-heading.dark { color: var(--dark); }
+
+/* ─────────────────────────────────────────
+   FEATURED TESTIMONIALS
+───────────────────────────────────────── */
+.testimonials-section {
+  background: var(--dark);
+  padding: clamp(60px, 8vw, 100px) clamp(16px, 4vw, 48px);
+}
+
+.testimonials-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+  align-items: stretch;
+}
+
+/* Individual testimonial card */
+.t-card {
+  background: var(--dark2);
+  border: 1px solid rgba(200, 146, 42, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.t-card:hover {
+  border-color: rgba(200, 146, 42, 0.45);
+  transform: translateY(-4px);
+}
+
+/* Logo area — square, image fills it edge to edge */
+.t-card-logo {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.t-card-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text area */
+.t-card-body {
+  padding: clamp(20px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.t-quote {
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.t-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(200, 146, 42, 0.15);
+}
+
+.t-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.t-role {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─────────────────────────────────────────
+   ALL CLIENTS GRID
+───────────────────────────────────────── */
+.all-clients-section {
+  background: var(--off-white);
+  padding: clamp(60px, 8vw, 100px) clamp(16px, 4vw, 48px);
+}
+
+.all-clients-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.all-clients-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vw, 24px);
+}
+
+/* Each row is a flex container */
+.clients-row {
+  display: flex;
+  justify-content: center;
+  gap: clamp(14px, 2vw, 24px);
+}
+
+/* Every card in both rows is identical size */
+.clients-row--4 .client-card,
+.clients-row--5 .client-card {
+  /* 5-column worth of width so both rows use same card size */
+  flex: 0 0 calc((100% - (4 * clamp(14px, 2vw, 24px))) / 5);
+}
+
+.client-card {
+  background: var(--white);
+  border: 1.5px solid rgba(200, 146, 42, 0.35);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.client-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(200, 146, 42, 0.12);
+}
+
+.client-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.client-card .trio { 
+    /* Special case to make Trio logo fit better */
+    object-fit: contain;
+}
+
+/* ─────────────────────────────────────────
+   CTA
+───────────────────────────────────────── */
+.clients-cta {
+  background: var(--dark2);
+  border-top: 1px solid rgba(200, 146, 42, 0.15);
+  padding: clamp(60px, 8vw, 100px) clamp(16px, 4vw, 48px);
+  position: relative;
+  overflow: hidden;
+}
+
+.clients-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 146, 42, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.clients-cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-body {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 8px 0 36px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .testimonials-grid { grid-template-columns: 3,1fr; max-width: 600px; margin: 0 auto; } /* check after mobile */
+
+  /* Collapse both rows to 3 equal columns */
+  .clients-row { flex-wrap: wrap; }
+  .clients-row--4 .client-card,
+  .clients-row--5 .client-card {
+    flex: 0 0 calc((100% - (2 * clamp(14px, 2vw, 24px))) / 3);
+  }
+}
+
+@media (max-width: 600px) {
+  /* 2 columns on mobile */
+  .clients-row--4 .client-card,
+  .clients-row--5 .client-card {
+    flex: 0 0 calc((100% - clamp(14px, 2vw, 24px)) / 2);
+  }
+  .cta-buttons { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 380px) {
+  .page-hero-title { font-size: 30px; }
+  .clients-row--4 .client-card,
+  .clients-row--5 .client-card { flex: 0 0 100%; }
+}
