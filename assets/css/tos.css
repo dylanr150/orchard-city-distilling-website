@@ -1,0 +1,199 @@
+/* ===========================================
+   terms.css
+   Styles specific to the Terms of Service page.
+   Requires global.css to be loaded first.
+=========================================== */
+
+/* ─────────────────────────────────────────
+   PAGE BACKGROUND — white for readability
+───────────────────────────────────────── */
+body {
+  background: var(--white);
+  color: var(--dark);
+}
+
+/* Nav stays solid black on this page — no hero */
+#mainNav {
+  background: rgba(10, 10, 10, 1) !important;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.2) !important;
+}
+
+/* ─────────────────────────────────────────
+   MAIN LAYOUT
+───────────────────────────────────────── */
+.terms-main {
+  padding-top: var(--nav-h);
+  background: var(--white);
+  min-height: 60vh;
+}
+
+.terms-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 90px) clamp(16px, 4vw, 48px) clamp(60px, 8vw, 100px);
+}
+
+/* ─────────────────────────────────────────
+   HEADER
+───────────────────────────────────────── */
+.terms-header {
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.terms-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.terms-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.terms-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 16px;
+}
+
+.terms-updated {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.5px;
+}
+
+/* ─────────────────────────────────────────
+   INTRO PARAGRAPH
+───────────────────────────────────────── */
+.terms-intro {
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 400;
+  line-height: 1.85;
+  color: rgba(0, 0, 0, 0.7);
+  padding: clamp(16px, 2.5vw, 24px) clamp(16px, 2.5vw, 24px);
+  border-left: 3px solid var(--gold);
+  background: rgba(200, 146, 42, 0.04);
+  margin-bottom: clamp(36px, 5vw, 52px);
+}
+
+/* ─────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────── */
+.terms-section {
+  margin-bottom: clamp(32px, 4vw, 48px);
+  padding-bottom: clamp(32px, 4vw, 48px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.terms-section:last-of-type {
+  border-bottom: none;
+}
+
+.terms-section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.terms-section p {
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 14px;
+}
+
+.terms-section p:last-child { margin-bottom: 0; }
+
+.terms-section strong {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* ─────────────────────────────────────────
+   LIST
+───────────────────────────────────────── */
+.terms-list {
+  list-style: none;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terms-list li {
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.65);
+  padding-left: 20px;
+  position: relative;
+}
+
+.terms-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ─────────────────────────────────────────
+   DISCLAIMER — slightly smaller / muted
+───────────────────────────────────────── */
+.terms-disclaimer {
+  font-size: clamp(12px, 1.3vw, 13px) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+  line-height: 1.85 !important;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER NOTE
+───────────────────────────────────────── */
+.terms-footnote {
+  margin-top: clamp(36px, 5vw, 52px);
+  padding: clamp(16px, 2.5vw, 24px);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  text-align: center;
+}
+
+.terms-footnote p {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.terms-footnote a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.terms-footnote a:hover { color: var(--gold-light); }
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .terms-inner { padding-left: 16px; padding-right: 16px; }
+}
