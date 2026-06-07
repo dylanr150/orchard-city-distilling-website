@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You — Orchard City Distilling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/general.css" />
+  <link rel="stylesheet" href="assets/css/thankyou.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+    <img src="assets/images/logo.png" alt="Orchard City Distilling" class="nav-logo-icon"/>
+</nav>
+
+
+<!-- THANK YOU CONTENT -->
+<main class="ty-main">
+
+  <!-- Background image with overlay -->
+  <div class="ty-bg">
+    <!-- Replace src with a subtle lifestyle/distillery image -->
+    <img src="assets/images/lakeview.jpeg" alt=""/>
+  </div>
+
+  <div class="ty-content">
+
+    <!-- Animated checkmark -->
+    <div class="ty-check">
+      <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle class="ty-check-circle" cx="26" cy="26" r="24" stroke-width="2"/>
+        <polyline class="ty-check-tick" points="14,27 22,35 38,18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <span class="ty-eyebrow">Message Received</span>
+    <h1 class="ty-title">Thank You!</h1>
+    <div class="ty-rule"></div>
+    <p class="ty-message">We appreciate you reaching out to Orchard City Distilling. A member of our team will be in touch with you within <strong>24–48 hours</strong>.</p>
+
+    <!-- Countdown -->
+    <p class="ty-countdown">Returning to home in <span id="countdown">10</span> seconds...</p>
+
+    <!-- Button -->
+    <a href="index.html" class="ty-btn">Return to Home</a>
+
+    <!-- Progress bar -->
+    <div class="ty-progress-wrap">
+      <div class="ty-progress-bar" id="progressBar"></div>
+    </div>
+
+  </div>
+</main>
+
+<script src="assets/js/general.js"></script>
+<script>
+  const DURATION = 10;
+  let remaining = DURATION;
+
+  const countdownEl = document.getElementById('countdown');
+  const progressBar = document.getElementById('progressBar');
+
+  // Animate progress bar over full duration
+  progressBar.style.transition = `width ${DURATION}s linear`;
+  // Trigger reflow so transition fires
+  progressBar.getBoundingClientRect();
+  progressBar.style.width = '100%';
+
+  const timer = setInterval(() => {
+    remaining--;
+    countdownEl.textContent = remaining;
+    if (remaining <= 0) {
+      clearInterval(timer);
+      window.location.href = 'index.html';
+    }
+  }, 1000);
+</script>
+</body>
+</html>
