@@ -1,0 +1,220 @@
+/* ===========================================
+   thankyou.css
+   Styles for the form submission thank you page.
+   Requires global.css to be loaded first.
+=========================================== */
+
+/* Full-height dark page */
+body {
+  background: var(--dark);
+  min-height: 100svh;
+}
+
+/* ─────────────────────────────────────────
+   MAIN — full viewport height centred
+───────────────────────────────────────── */
+.ty-main {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-h) + 32px) clamp(16px, 5vw, 48px) clamp(40px, 6vw, 72px);
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────
+   BACKGROUND IMAGE (optional atmosphere)
+───────────────────────────────────────── */
+.ty-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ty-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.15;
+}
+
+/* Dark base even without an image */
+.ty-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 146, 42, 0.06) 0%, transparent 70%);
+}
+
+/* ─────────────────────────────────────────
+   CONTENT CARD
+───────────────────────────────────────── */
+.ty-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: ty-fadeUp 0.7s ease both;
+}
+
+@keyframes ty-fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ─────────────────────────────────────────
+   ANIMATED CHECK ICON
+───────────────────────────────────────── */
+.ty-check {
+  width: clamp(60px, 10vw, 80px);
+  height: clamp(60px, 10vw, 80px);
+  margin-bottom: 28px;
+}
+
+.ty-check svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ty-check-circle {
+  stroke: var(--gold);
+  fill: none;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  animation: draw-circle 0.6s ease 0.2s forwards;
+}
+
+.ty-check-tick {
+  stroke: var(--gold);
+  fill: none;
+  stroke-dasharray: 36;
+  stroke-dashoffset: 36;
+  animation: draw-tick 0.4s ease 0.75s forwards;
+}
+
+@keyframes draw-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-tick {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────── */
+.ty-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.ty-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 7vw, 68px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.ty-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 24px;
+}
+
+.ty-message {
+  font-size: clamp(14px, 1.6vw, 17px);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 36px;
+}
+
+.ty-message strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+   COUNTDOWN
+───────────────────────────────────────── */
+.ty-countdown {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 24px;
+}
+
+#countdown {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+   BUTTON
+───────────────────────────────────────── */
+.ty-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: clamp(12px, 1.5vw, 14px) clamp(28px, 4vw, 40px);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(11px, 1.3vw, 13px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-bottom: 32px;
+}
+
+.ty-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 146, 42, 0.35);
+}
+
+/* ─────────────────────────────────────────
+   PROGRESS BAR
+───────────────────────────────────────── */
+.ty-progress-wrap {
+  width: 100%;
+  max-width: 320px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.ty-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  /* transition applied via JS after reflow */
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 380px) {
+  .ty-title { font-size: 36px; }
+}
