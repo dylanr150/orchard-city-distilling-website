@@ -159,10 +159,11 @@
    PRODUCT SECTIONS
 ───────────────────────────────────────── */
 .product-section {
-  padding: clamp(72px, 10vw, 120px) clamp(16px, 4vw, 48px);
+  padding: clamp(72px, 10vw, 40px) clamp(16px, 4vw, 48px);
 }
 
 .product-section--light { background: var(--off-white); }
+.product-section--pink { background: var(--pink); }
 .product-section--dark  { background: var(--dark); }
 
 .product-inner {
