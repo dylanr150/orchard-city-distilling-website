@@ -499,8 +499,9 @@ body {
   .clients-grid { grid-template-columns: 1fr; }
   /* On mobile, quote card doesn't need to stretch — just hug content */
   .testimonial-card { height: auto; justify-content: flex-start; }
+  .clients-right { height: auto; }
   /* Drop to 2 cols on tablet so logos aren't tiny */
-  .logo-grid { grid-template-columns: repeat(3, 1fr); }
+  .logo-grid { grid-template-columns: repeat(2, 1fr); }
 
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
